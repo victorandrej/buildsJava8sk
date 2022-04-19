@@ -65,8 +65,8 @@
 	<target name="5 - Executar Todos" depends="1 - Compilar Java,2 - Montar WAR,3 - Deploy WAR,4 - Enviar WAR para gerar extensão" />
 
 	<target name="HTML5" description="atualiza arquivos utilizados apenas nas telas em HTML5 - NAO é necessario reiniciar o servidor">
-		<echo>Atualizando arquivos do HTML5 em ${default.jboss}\deploy\${war_name}\ </echo>
-		<copy todir="${default.jboss}/deploy/${warName}/html5" failonerror="true" verbose="true">
+		<echo>Atualizando arquivos do HTML5 em ${defaultjboss}/deployments/${ear.name}/web/${warName}/ </echo>
+		<copy todir="${defaultjboss}/deployments/${ear.name}/web/${warName}/html5" failonerror="true" verbose="true">
 			<fileset dir="${basedir}/build/html5">
 				<include name="**/*.js" />
 				<include name="**/*.png" />
